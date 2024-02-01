@@ -1,4 +1,4 @@
-import { TaskForgeConfig } from "./config.js"
+import { TaskForgeConfig } from "./config"
 
 export const prettyPrint = (
 	tasks: Array<{
@@ -11,7 +11,7 @@ export const prettyPrint = (
 
 	for (const i of tasks) {
 		const order = `0${i.order}`.slice(-2)
-		text += `${order} : ${i.status}\t${i.name}\n`
+		text += `${order} | ${i.status} \t${i.name}\n`
 	}
 
 	console.log(text)

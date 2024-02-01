@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 import { Command } from "commander"
-import { TaskForgeTask } from "./helpers/task.js"
+import { TaskForgeTask } from "./helpers/task"
 
 const program = new Command()
 

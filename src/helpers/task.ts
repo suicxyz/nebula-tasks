@@ -1,8 +1,8 @@
 import fs from "fs"
 import { v4 } from "uuid"
-import type { TFConfig } from "../@types/nebula-tasks.js"
-import { TaskForgeConfig } from "./config.js"
-import { prettyPrint } from "./print.js"
+import type { TFConfig } from "../@types/nebula-tasks"
+import { TaskForgeConfig } from "./config"
+import { prettyPrint } from "./print"
 
 export class TaskForgeTask {
 	private config: TFConfig

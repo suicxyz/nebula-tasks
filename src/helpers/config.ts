@@ -1,6 +1,6 @@
 import fs from "fs"
 import { join } from "path"
-import type { TFConfig, TFTask } from "../@types/nebula-tasks.js"
+import type { TFConfig, TFTask } from "../@types/nebula-tasks"
 
 export class TaskForgeConfig {
 	private path: string
