@@ -10,7 +10,7 @@ export class TaskForgeConfig {
 
 	constructor() {
 		this.path = join(process.env.HOME!, ".config/")
-		this.filename = "taskforge-config.json"
+		this.filename = "nebula-tasks.config.json"
 		this.user = process.env.USER!
 		this.tasks = this.getInitialTasks()
 	}
