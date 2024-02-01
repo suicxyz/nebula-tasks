@@ -1,0 +1,39 @@
+{
+  "name": "nebula-tasks",
+  "version": "0.0.1",
+  "description": "A simple command line application for TODO tasks.",
+  "exports": "./dist/index.js",
+  "engines": {
+    "node": ">=20.11"
+  },
+  "bin": {
+    "nebula-tasks": "./dist/index.js",
+    "nebula": "./dist/index.js"
+  },
+  "scripts": {
+    "test": "nebula",
+    "dev": "node -r ts-node/register src/index.ts",
+    "build": "tsup src"
+  },
+  "keywords": [
+    "cli",
+    "command-line",
+    "command",
+    "todo",
+    "tasks"
+  ],
+  "author": "suicxyz",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "@types/node": "^20.11.14",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "@biomejs/biome": "^1.5.3",
+    "@types/uuid": "^9.0.8",
+    "commander": "^11.1.0",
+    "tsup": "^8.0.1",
+    "uuid": "^9.0.1"
+  }
+}
