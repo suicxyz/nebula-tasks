@@ -1,12 +1,12 @@
 import fs from "fs"
 import { join } from "path"
-import type { TFConfig, TFTask } from "../@types/nebula-tasks"
+import { INebulaConfig, INebulaTask } from "../@types/nebula-tasks"
 
-export class TaskForgeConfig {
+export class NebulaConfig {
 	private path: string
 	private filename: string
 	private user: string
-	private tasks: Array<TFTask>
+	private tasks: Array<INebulaTask>
 
 	constructor() {
 		this.path = join(process.env.HOME!, ".config/")
@@ -19,7 +19,7 @@ export class TaskForgeConfig {
 		const dir = fs.readdirSync(this.path)
 		if (dir.includes(this.filename)) return
 
-		const baseConfig: TFConfig = {
+		const baseConfig: INebulaConfig = {
 			username: this.user,
 			tasks: [],
 		}
@@ -35,7 +35,7 @@ export class TaskForgeConfig {
 		)
 	}
 
-	public get config(): TFConfig {
+	public get config(): INebulaConfig {
 		return JSON.parse(
 			fs.readFileSync(join(this.path, this.filename)).toString(),
 		)

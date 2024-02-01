@@ -1,4 +1,4 @@
-import { TaskForgeConfig } from "./config"
+import { NebulaConfig } from "./config"
 
 export const prettyPrint = (
 	tasks: Array<{
@@ -7,7 +7,7 @@ export const prettyPrint = (
 		status: "TODO" | "DOING" | "DONE"
 	}>,
 ) => {
-	let text = `Hello, ${new TaskForgeConfig().username}, your tasks:\n`
+	let text = `Hello, ${new NebulaConfig().username}, your tasks:\n`
 
 	for (const i of tasks) {
 		const order = `0${i.order}`.slice(-2)

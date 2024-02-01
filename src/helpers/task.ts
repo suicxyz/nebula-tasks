@@ -1,14 +1,16 @@
 import fs from "fs"
 import { v4 } from "uuid"
-import type { TFConfig } from "../@types/nebula-tasks"
-import { TaskForgeConfig } from "./config"
+import { INebulaConfig } from "../@types/nebula-tasks"
+import { NebulaConfig } from "./config"
 import { prettyPrint } from "./print"
 
-export class TaskForgeTask {
-	private config: TFConfig
+export class NebulaTask {
+	private config: INebulaConfig
+	private configPath: string
 
 	constructor() {
-		this.config = new TaskForgeConfig().config
+		this.config = new NebulaConfig().config
+		this.configPath = new NebulaConfig().configpath
 	}
 
 	public listTasks() {
@@ -23,7 +25,7 @@ export class TaskForgeTask {
 		this.config.tasks.push({ id: v4(), name, order, status: "TODO" })
 
 		fs.writeFileSync(
-			new TaskForgeConfig().configpath,
+			this.configPath,
 			JSON.stringify(this.config),
 		)
 	}
@@ -34,7 +36,7 @@ export class TaskForgeTask {
 				this.config.tasks[i].status = "DOING"
 
 		fs.writeFileSync(
-			new TaskForgeConfig().configpath,
+			this.configPath,
 			JSON.stringify(this.config),
 		)
 	}
@@ -48,7 +50,7 @@ export class TaskForgeTask {
 			this.config.tasks[i].order = parseInt(i) + 1
 
 		fs.writeFileSync(
-			new TaskForgeConfig().configpath,
+			this.configPath,
 			JSON.stringify(this.config),
 		)
 	}
