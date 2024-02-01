@@ -17,7 +17,10 @@
   "scripts": {
     "test": "nebula",
     "dev": "node -r ts-node/register src/index.ts",
-    "build": "tsup src"
+    "build": "tsup src",
+    "publish-patch": "tsup src && npm version patch && npm publish",
+    "publish-minor": "tsup src && npm version minor && npm publish",
+    "publish-major": "tsup src && npm version major && npm publish"
   },
   "keywords": [
     "cli",
