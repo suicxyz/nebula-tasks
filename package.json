@@ -1,6 +1,6 @@
 {
   "name": "nebula-tasks",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A simple command line application for TODO tasks.",
   "exports": "./dist/index.js",
   "files": [
