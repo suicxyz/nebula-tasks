@@ -29,7 +29,7 @@ nebula list
 ```
 
 Marking a task as "doing" or "done"
-```
+```bash
 nebula doing 1
 nebula done 1 
 ```
@@ -40,4 +40,4 @@ If you'd like to contribute to Nebula Tasks, please follow our contribution guid
 
 ## License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is licensed under the MIT License - see the LICENSE.md file for details.
